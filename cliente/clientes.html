@@ -1,0 +1,163 @@
+<h2>Clientes</h2>
+
+<div class="input-append">
+    <input class="input-xxlarge" id="filtrar" type="text" placeholder="Nome do cliente">
+    <button id="btnBuscar" class="btn" type="button">Filtrar</button>
+    <button id="btnNovo" class="btn btn-primary" type="button">Novo</button>
+</div>
+
+<div>
+    <table id="tableClientes" class="table table-bordered table-hover table-striped">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Celular</th>
+                <th>E-mail</th>
+                <th width="10"></th>
+                <th width="10"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="">Mark</a></td>
+                <td>Otto</td>
+                <td>telefone</td>
+                <td>celular</td>
+                <td><a href="#"><i class="icon-trash"></i></a></td>
+                <td><a href="#"><i class="icon-trash"></i></a></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <div class="modal fade" id="novoModal" style="display: none;">
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">&times;</a>
+            <h3>Cliente</h3>
+        </div>
+        <div class="modal-body">
+
+            <div id="saveMessage" class="alert alert-success" style="display:none">
+                <img src="img/ajax-loader.gif"> Salvando dados...
+            </div>
+
+            <form id="form" class="form-horizontal well">
+                <input type="hidden" id="inputId">
+                <input type="hidden" id="inputIdUsuario">
+
+                <div id="errorEmpty" class="alert alert-error" style="display:none">
+                    Campos requeridos
+                </div>
+
+                <div id="errorServer" class="alert alert-error" style="display:none"></div>
+
+                <div class="control-group">
+                    <label class="control-label" for="inputNome">Nome</label>
+                    <div class="controls">
+                        <input type="text" id="inputNome" placeholder="Nome" class="input-block-level">
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <label class="control-label" for="inputCpf">CPF</label>
+                    <div class="controls">
+                        <input type="text" id="inputCpf" placeholder="CPF" class="input-block-level">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="inputCnpj">CNPJ</label>
+                    <div class="controls">
+                        <input type="text" id="inputCnpj" placeholder="Cnpj" class="input-block-level">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="inputIe">IE</label>
+                    <div class="controls">
+                        <input type="text" id="inputIe" placeholder="Insc. Estadual" class="input-block-level">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="inputEndereco">endereco</label>
+                    <div class="controls">
+                        <input type="text" id="inputEndereco" placeholder="Endereco" class="input-block-level">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="inputNumero">Numero</label>
+                    <div class="controls">
+                        <input type="text" id="inputNumero" placeholder="Numero" class="input-block-level">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="inputBairro">Bairro</label>
+                    <div class="controls">
+                        <input type="text" id="inputBairro" placeholder="Bairro" class="input-block-level">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="inputCep">CEP</label>
+                    <div class="controls">
+                        <input type="text" id="inputCep" placeholder="CEP" class="input-block-level">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="inputCidade">Cidade</label>
+                    <div class="controls">
+                        <input type="text" id="inputCidade" placeholder="Cidade" class="input-block-level">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="inputUF">UF</label>
+                    <div class="controls">
+                        <input type="text" id="inputUF" placeholder="UF" class="input-block-level">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="inputEmail">Email</label>
+                    <div class="controls">
+                        <input type="text" id="inputEmail" placeholder="Email" class="input-block-level">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="inputObs">Obs</label>
+                    <div class="controls">
+                        <input type="text" id="inputObs" placeholder="Obs" class="input-block-level">
+                    </div>
+                </div>
+
+                        <input type="hidden" id="inputTipo" value="1" />
+
+                <div class="control-group">
+                    <label class="control-label" for="inputTelefone">Telefone</label>
+                    <div class="controls">
+                        <input type="text" id="inputTelefone" placeholder="Telefone" class="input-block-level">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="inputCelular">Celular</label>
+                    <div class="controls">
+                        <input type="text" id="inputCelular" placeholder="Celular" class="input-block-level">
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+        <div class="modal-footer">
+            <a id="salvar" href="#" class="btn btn-primary">Salvar</a>
+        </div>
+    </div>
+
+

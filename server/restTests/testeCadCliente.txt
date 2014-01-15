@@ -1,0 +1,14 @@
+{
+"nome" : "maycon", 
+"endereco" : "Rua Braz Izzo",
+"numero" : 435,
+"bairro": "Jose R. Pires",
+"cidade" : "Marialva",
+"uf" : "PR",
+"email" : "maycon77@hotmail.com",
+"obs" : "Super mega cliente",
+"tipo" : 1,
+"telefone" : "32323530",
+"celular" : "99184750",
+"data_cad" : "2013-10-31"
+}
