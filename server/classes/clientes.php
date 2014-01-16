@@ -67,6 +67,7 @@ class clientes extends usuarios {
 	}
 
 	public function get_listAll($parameter){
+
 		$filtroWHERE = "ORDER BY usuarios.nome";
         $nomeLike = "%$parameter%";
 

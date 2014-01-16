@@ -132,7 +132,7 @@ function atualizaGrid()
             data.result.forEach(function(cliente) {
 
                 row = "<tr>"
-                        + "<td><a href='index.php?go=clienteSelecionado&id=" + cliente.idUsuario + "'>" + cliente.nome + "</a></td>"
+                        + "<td><a href='index.php?go=cliente&id=" + cliente.idUsuario + "'>" + cliente.nome + "</a></td>"
                         + "</td><td>" + cliente.telefone
                         + "</td><td>" + cliente.celular
                         + "</td><td>" + cliente.email

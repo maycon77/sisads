@@ -2,15 +2,17 @@
 
 class cliente{
 	
-	public function get_customer($id){
-		$sql = "SELECT * FROM usuarios, clientes ";
-		$sql += "WHERE clientes.idUsuario = :id AND usuarios.id = :id";
+	public function post_list($id){
+		/*tive que mandar pelo post por causa do id que não deu pra fazer por url amigavel*/
+		$sql = "SELECT * FROM usuarios, clientes WHERE clientes.idUsuario = usuarios.id AND usuarios.id = :id";
 		$stmt = DB::prepare($sql);
-		$stmt->bindParam("id", $id);
+		$stmt->bindParam("id", $id->id);
 		$stmt->execute();
-
-		return $stmt->fetch();
-
+		
+		$result = $stmt->fetch();
+		
+		return $result;
+		
 	}
 
 	public function get_allOrders($id){
