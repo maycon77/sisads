@@ -1,4 +1,4 @@
 sisads
 ======
 
-sistema para gerenciamento de marcenaria
+sistema de gerenciamento de marcenaria
