@@ -25,6 +25,7 @@ var id = _GETURL('id');
 
 $(document).ready(function() {
 	verifyLogin();
+  pegaCliente(id);
 	atualizaGrid(id);
 });
 
@@ -40,14 +41,13 @@ $('#btnNext').click(function () {
 
 });
 
-function atualizaGrid(id) {
-
-	$.ajax({
-		type: "post",
-		url: rootUrl + "cliente/list",
-		dataType: "json",
+function pegaCliente(id){
+  $.ajax({
+    type: "post",
+    url: rootUrl + "cliente/list",
+    dataType: "json",
     data: JSON.stringify({id: id}),
-		success: function(data) {
+    success: function(data) {
       var cliente = data.result;
           row = '<div class="row">'
               +'<div class="span7 bg-clean"><h5>Nome: </h5><span class="resultH5">'+cliente.nome+'</span></div>'
@@ -69,6 +69,19 @@ function atualizaGrid(id) {
             +'</div>'
             +'<button>Alterar</button>';
           $(row).appendTo($("#dadosCliente")); 
-		}
-	});
+    }
+  });
+}
+
+function atualizaGrid(id) {
+
+  /*Pegar todos os pedidos do cliente*/
+  $.ajax({
+    type: "get",
+    url: rootUrl + "pedido/listAll/" + id,
+    dataType: "json",
+    success: function(data) {
+      /*Fazer um forEach para mostrar os resultados*/
+    }
+  });
 }
