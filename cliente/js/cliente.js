@@ -78,10 +78,24 @@ function atualizaGrid(id) {
   /*Pegar todos os pedidos do cliente*/
   $.ajax({
     type: "get",
-    url: rootUrl + "pedido/listAll/" + id,
+    url: rootUrl + "cliente/allOrders/" + id,
     dataType: "json",
     success: function(data) {
-      /*Fazer um forEach para mostrar os resultados*/
+      console.log(data.result);
+      data.result.forEach(function(pedido) {
+
+                row = '<tr>'
+                +'<td><a href="#">' + pedido.id + '</a></td>'
+                +'<td>' + pedido.data + '</td>'
+                +'<td>' + pedido.descricao + '</td>'
+                +'<td>' + pedido.status + '</td>'
+                +'<td>' +'</td>'
+                +'<td>' + pedido.dataPrazo + '</td>'
+                +'<td>' + pedido.dataEntrega + '</td>'
+                +'<td><a href="#"><i class="icon-trash" data-id="'+ pedido.id +'" data-idUsuario="'+pedido.idUsuario+'"></i></a></td>'
+            +'</tr>';
+                $("#tablePedidos > tbody:last").append(row);
+            });
     }
   });
 }
