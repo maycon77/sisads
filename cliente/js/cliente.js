@@ -41,6 +41,10 @@ $('#btnNext').click(function () {
 
 });
 
+$(".alterar").live("click", function(){
+  $("#novoModal").modal("show");
+});
+
 function pegaCliente(id){
   $.ajax({
     type: "post",
@@ -85,7 +89,7 @@ function atualizaGrid(id) {
       data.result.forEach(function(pedido) {
 
                 row = '<tr>'
-                +'<td><a href="#">' + pedido.id + '</a></td>'
+                +'<td><a href="#" class="alterar" data-id="' + pedido.id + '">' + pedido.id + '</a></td>'
                 +'<td>' + pedido.data + '</td>'
                 +'<td>' + pedido.descricao + '</td>'
                 +'<td>' + pedido.status + '</td>'
@@ -98,4 +102,5 @@ function atualizaGrid(id) {
             });
     }
   });
+
 }
