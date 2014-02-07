@@ -5149,6 +5149,11 @@ input[type="submit"].btn.btn-mini {
           transition: opacity 0.3s linear, top 0.3s ease-out;
 }
 
+.largura-1000{
+  margin-left: -480px;
+  width: 960px !important;
+}
+
 .modal.fade.in {
   top: 10%;
 }
